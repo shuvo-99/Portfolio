@@ -73,7 +73,7 @@
 
       <!-- banner -->
 
-      <div class="containe p-0">
+      <div class="containe p-0" id="home">
         <img src="images/banner.jpg" class="img-fluid" alt="" />
         <div class="centered">
           <h1>Md. Anonto Shuvo</h1>
@@ -509,7 +509,7 @@
     <footer>
       <section class="bg-dark">
         <div class="container mt-5">
-          <div class="row gx-5">
+          <div class="row gx-5 gy-5">
             <!-- About me -->
 
             <div class="col-lg-4">
@@ -530,32 +530,69 @@
             <div class="col-lg-4">
               <h1 class="text-white">Links</h1>
               <ul class="p-0">
-                <li class="py-2">
-                  <a href="#">
-                    <i class="fas fa-arrow-right text-white"> Home</i>
-                  </a>
+                <!-- home -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <a href="#home">
+                      <i class="fas fa-arrow-right text-white"></i>
+                    </a>
+                  </div>
+                  <div class="text-white ps-3">
+                    <a href="#home" class="flink text-white">Home</a>
+                  </div>
                 </li>
-                <li class="py-2">
-                  <a href="#">
-                    <i class="fas fa-arrow-right text-white"> About Me</i>
-                  </a>
+
+                <!-- About me -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <a href="#aboutme">
+                      <i class="fas fa-arrow-right text-white"></i>
+                    </a>
+                  </div>
+                  <div class="text-white ps-3">
+                    <a href="#aboutme" class="flink text-white">About Me</a>
+                  </div>
                 </li>
-                <li class="py-2">
-                  <a href="#">
-                    <i class="fas fa-arrow-right text-white"> Experience</i>
-                  </a>
+
+                <!-- Experience -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <a href="#ex">
+                      <i class="fas fa-arrow-right text-white"></i>
+                    </a>
+                  </div>
+                  <div class="text-white ps-3">
+                    <a href="#ex" class="flink text-white">Experience</a>
+                  </div>
                 </li>
-                <li class="py-2">
-                  <a href="#">
-                    <i class="fas fa-arrow-right text-white"> Projects</i>
-                  </a>
+
+                <!-- Projects -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <a href="#project">
+                      <i class="fas fa-arrow-right text-white"></i>
+                    </a>
+                  </div>
+                  <div class="text-white ps-3">
+                    <a href="#project" class="flink text-white">Projects</a>
+                  </div>
                 </li>
-                <li class="py-2">
-                  <a href="#">
-                    <i class="fas fa-arrow-right text-white">
-                      <span class="text-danger">skills</span></i
-                    >
-                  </a>
+
+                <!-- Skill -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <a href="#skill">
+                      <i class="fas fa-arrow-right text-white"></i>
+                    </a>
+                  </div>
+                  <div class="text-white ps-3">
+                    <a href="#skill" class="flink text-white">Skills</a>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -565,39 +602,68 @@
             <div class="col-lg-4">
               <h1 class="text-white">Conatacts and Info</h1>
               <ul class="p-0">
-                <li class="py-2">
-                  <i class="fas fa-map-marker-alt text-white">
-                    <span
-                      >House - 12, Block - C , Road - 01 Kaderabad Housing ,
-                      Mohammadpur, Dhaka</span
-                    ></i
-                  >
+                <!-- House -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <i class="fas fa-map-marker-alt text-white"></i>
+                  </div>
+                  <div class="text-white ps-3">
+                    House - 12, Block - C, Road - 01 Kaderabad Housing,
+                    Mohammadpur, Dhaka
+                  </div>
                 </li>
-                <li class="py-2">
-                  <a href="#">
-                    <i class="fas fa-arrow-right text-white"> About Me</i>
-                  </a>
+
+                <!-- phone -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <i class="fas fa-phone-alt text-white"></i>
+                  </div>
+                  <div class="text-white ps-3">+8801521561754</div>
                 </li>
-                <li class="py-2">
-                  <a href="#">
-                    <i class="fas fa-arrow-right text-white"> Experience</i>
-                  </a>
-                </li>
-                <li class="py-2">
-                  <a href="#">
-                    <i class="fas fa-arrow-right text-white"> Projects</i>
-                  </a>
-                </li>
-                <li class="py-2">
-                  <a href="#">
-                    <i class="fas fa-arrow-right text-white">
-                      <span class="text-danger">skills</span></i
-                    >
-                  </a>
+
+                <!-- gmail -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <i class="fas fa-envelope text-white"></i>
+                  </div>
+                  <div class="text-white ps-3">anontoshuvo99@gmail.com</div>
                 </li>
               </ul>
             </div>
           </div>
+        </div>
+
+        <div class="container mt-5">
+          <ul class="d-flex p-0">
+            <li class="py-2 d-flex">
+              <a href="#">
+                <i class="fab fa-github-square text-white"></i>
+              </a>
+            </li>
+            <li class="py-2 d-flex">
+              <a href="#aboutme">
+                <i class="fab fa-linkedin text-white"></i>
+              </a>
+            </li>
+            <li class="py-2 d-flex">
+              <a href="#aboutme">
+                <i class="fab fa-behance-square text-white"></i>
+              </a>
+            </li>
+            <li class="py-2 d-flex">
+              <a href="#aboutme">
+                <i class="fab fa-facebook-square text-white"></i>
+              </a>
+            </li>
+            <li class="py-2 d-flex">
+              <a href="#aboutme">
+                <i class="fab fa-github text-white"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
     </footer>
