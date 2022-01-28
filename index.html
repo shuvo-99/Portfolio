@@ -50,13 +50,21 @@
           >
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="#home"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">Features</a>
+                <a class="nav-link active" href="#aboutme">About Me</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">Pricing</a>
+                <a class="nav-link active" href="#ex">Experience</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#project">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#skill">Skills</a>
               </li>
             </ul>
           </div>
@@ -77,7 +85,7 @@
     <main>
       <!-- About Me -->
 
-      <div class="container-fluid bg-info">
+      <div class="container-fluid bg-info" id="aboutme">
         <div class="row d-flex align-items-center">
           <div
             class="col-lg-5 d-flex justify-content-center align-items-center"
@@ -122,7 +130,7 @@
 
       <!-- Skills -->
 
-      <section class="container my-5">
+      <section class="container my-5" id="skill">
         <h1 class="fw-bold text-center my-5">Skills</h1>
         <!-- <div class="row">
           <div class="col-lg-3">Language</div>
@@ -273,7 +281,7 @@
 
       <!-- Project -->
 
-      <section class="container my-5">
+      <section class="container my-5" id="project">
         <h1 class="fw-bold text-center my-5">Projects</h1>
 
         <!-- Programming -->
@@ -456,14 +464,16 @@
           </div>
         </div>
       </section>
-      <br />
 
+      <!-- Line -->
+
+      <br />
       <div class="container"><hr /></div>
       <br />
 
       <!-- Experience -->
 
-      <section class="container my-5">
+      <section class="container my-5" id="ex">
         <!-- <h1 class="fw-bold text-center my-5">Experiences</h1> -->
         <div class="row mb-5 gx-5">
           <div class="col-lg-3">
@@ -495,13 +505,13 @@
           </div>
         </div>
       </section>
-
-      <!-- Experience -->
     </main>
     <footer>
       <section class="bg-dark">
-        <div class="container my-5">
+        <div class="container mt-5">
           <div class="row gx-5">
+            <!-- About me -->
+
             <div class="col-lg-4">
               <!-- <div class="p-3 rounded-3 shadow-lg text-center h mb-5">
                 Experience
@@ -514,6 +524,9 @@
                 learning it.
               </p>
             </div>
+
+            <!-- Links -->
+
             <div class="col-lg-4">
               <h1 class="text-white">Links</h1>
               <ul class="p-0">
@@ -545,25 +558,44 @@
                   </a>
                 </li>
               </ul>
-              <p>
-                BUCC Academy. November 2021 - Present <br />
-                Teach basic introduction to Python, Object Oriented Programming
-                and Data Structure
-              </p>
-              <br />
+            </div>
 
-              <!-- <h1>Python Programming Content Creator</h1>
-              <p>
-                Anvo Learning. August 2020 - Present <br />
-                Make Problem solving videos.
-              </p> -->
-              <br />
+            <!-- Conatacts and Info -->
 
-              <h1>BRAC University Computer Club</h1>
-              <p>
-                Executive of Creative Department. October 2020 - Present <br />
-                Create posters, covers and videos for BUCC's events.
-              </p>
+            <div class="col-lg-4">
+              <h1 class="text-white">Conatacts and Info</h1>
+              <ul class="p-0">
+                <li class="py-2">
+                  <i class="fas fa-map-marker-alt text-white">
+                    <span
+                      >House - 12, Block - C , Road - 01 Kaderabad Housing ,
+                      Mohammadpur, Dhaka</span
+                    ></i
+                  >
+                </li>
+                <li class="py-2">
+                  <a href="#">
+                    <i class="fas fa-arrow-right text-white"> About Me</i>
+                  </a>
+                </li>
+                <li class="py-2">
+                  <a href="#">
+                    <i class="fas fa-arrow-right text-white"> Experience</i>
+                  </a>
+                </li>
+                <li class="py-2">
+                  <a href="#">
+                    <i class="fas fa-arrow-right text-white"> Projects</i>
+                  </a>
+                </li>
+                <li class="py-2">
+                  <a href="#">
+                    <i class="fas fa-arrow-right text-white">
+                      <span class="text-danger">skills</span></i
+                    >
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
