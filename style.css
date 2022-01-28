@@ -18,19 +18,3 @@
 .flink {
   text-decoration: none;
 }
-
-/* .social-item {
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  background: #333;
-  position: relative;
-  border-radius: 50%;
-  font-size: 22px;
-  margin: 0 10px;
-} */
-
-.social-item {
-  width: 60px;
-  height: 60px;
-}
