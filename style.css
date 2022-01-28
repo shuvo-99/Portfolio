@@ -18,3 +18,113 @@
 .flink {
   text-decoration: none;
 }
+
+/* a {
+  text-decoration: none;
+  position: relative;
+} */
+
+/*
+
+border top-bottom from left
+
+.l::before,
+.l::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: rgb(231, 50, 50);
+  transition: 0.2s;
+}
+
+.l::before {
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 4px;
+}
+.l::after {
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+}
+
+.l:hover::before {
+  
+  width: 100%;
+}
+
+.l:hover::after {
+  width: 100%;
+} */
+
+/* 
+
+border top-bottom from middle
+
+.l::before,
+.l::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: rgb(231, 50, 50);
+  transition: 0.2s;
+}
+
+.l::before {
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 4px;
+}
+.l::after {
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+}
+
+.l:hover::before {
+  left: 0;
+  width: 100%;
+}
+
+.l:hover::after {
+  width: 100%;
+  left: 0;
+} */
+
+/* border bottom from middle */
+
+.l::before,
+.l::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: rgb(231, 50, 50);
+  transition: 0.2s;
+}
+
+.l::before {
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 4px;
+}
+.l::after {
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+}
+
+/* .l:hover::before {
+  left: 0;
+  width: 100%;
+} */
+
+.l:hover::after {
+  width: 100%;
+  left: 0;
+}
