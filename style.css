@@ -131,7 +131,60 @@ border top-bottom from middle
 
 .pro-btn {
   background-color: lightskyblue;
-  linear
 }
 
+/* .banner{
+  position: relative;
+  background:url(ban-01.jpg);
+  min-height:100vh;
+  background-size:cover;
+  background-position:center;
+  padding:250px 0 200px;
 
+} */
+
+.main-image {
+  position: relative;
+  background: no-repeat center;
+  background-size: cover;
+  /* width:1519.200px;
+  height:500px; */
+  overflow: hidden;
+}
+
+.contain {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.contain {
+  margin: 0;
+}
+
+.contain h1 span {
+  display: inline-block;
+  /* font-weight: 500; */
+}
+.cen {
+  margin: 20px;
+  display: block;
+  font-size: 26px;
+}
+
+@media only screen and (max-width: 688px) {
+  .contain h1 span {
+    font-size: 2.2rem;
+  }
+  .cen {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    display: inline-block;
+  }
+}
