@@ -160,6 +160,12 @@ border top-bottom from middle
   overflow: hidden;
 }
 
+.main-bg {
+  background: url(images/b2.png) no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
 .contain {
   position: absolute;
   top: 50%;
