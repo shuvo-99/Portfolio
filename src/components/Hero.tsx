@@ -21,7 +21,7 @@ export default function Hero() {
             className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
           >
             Software Engineer & <br />
-            <span className="text-gradient">Adjunct Lecturer</span>
+            <span className="text-gradient">Educator</span>
           </motion.h1>
 
           <motion.p
