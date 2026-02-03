@@ -26,10 +26,11 @@ export default function About() {
             className="md:col-span-2"
           >
             <p className="text-xl text-muted-foreground leading-relaxed">
-              I’m a software engineer with 2 years of industry experience and
-              over a year of teaching as an adjunct lecturer. Teaching has
-              shaped how I write code — clear, maintainable, and built with
-              fundamentals in mind.
+              Software Engineer with 2 years of industry experience and over a
+              year of teaching as an adjunct lecturer.
+              {/* Teaching has shaped how I
+              write code — clear, maintainable, and built with fundamentals in
+              mind. */}
             </p>
             <p className="mt-6 text-muted-foreground leading-relaxed">
               I specialize in building full-stack applications using modern

@@ -2,15 +2,18 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import Link from "next/link";
 
 export default function ProjectCard({
   title,
   description,
   tech,
+  link,
 }: {
   title: string;
   description: string;
   tech: string;
+  link: string;
 }) {
   return (
     <motion.div
@@ -22,8 +25,10 @@ export default function ProjectCard({
           {title}
         </h3>
         <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-          <Github className="w-5 h-5 text-muted-foreground hover:text-foreground cursor-pointer" />
-          <ExternalLink className="w-5 h-5 text-muted-foreground hover:text-foreground cursor-pointer" />
+          {/* <Github className="w-5 h-5 text-muted-foreground hover:text-foreground cursor-pointer" /> */}
+          <Link href={link} target="_blank">
+            <ExternalLink className="w-5 h-5 text-muted-foreground hover:text-foreground cursor-pointer" />
+          </Link>
         </div>
       </div>
       <p className="text-muted-foreground mb-6 line-clamp-2">{description}</p>

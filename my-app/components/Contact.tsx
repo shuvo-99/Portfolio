@@ -14,8 +14,8 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="bg-primary/5 rounded-[3rem] p-12 md:p-24 border border-primary/10"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let’s work together.
+          <h2 className="text-2xl md:text-5xl font-bold mb-6">
+            Let’s connect together.
           </h2>
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
             I’m always open to discussing new projects, creative ideas or
@@ -24,7 +24,8 @@ export default function Contact() {
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <a
-              href="mailto:your@email.com"
+              href="mailto:anontoshuvo99@gmail.com"
+              target="_blank"
               className="px-10 py-4 rounded-full bg-primary text-primary-foreground font-bold hover:opacity-90 transition-all flex items-center gap-2"
             >
               <Mail className="w-5 h-5" />
@@ -32,13 +33,15 @@ export default function Contact() {
             </a>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/md-anonto-shuvo/"
+                target="_blank"
                 className="p-4 rounded-full border border-border bg-background hover:bg-muted transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="https://github.com/shuvo-99"
+                target="_blank"
                 className="p-4 rounded-full border border-border bg-background hover:bg-muted transition-colors"
               >
                 <Github className="w-6 h-6" />

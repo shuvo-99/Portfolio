@@ -6,28 +6,31 @@ export default function Skills() {
   const skillGroups = [
     {
       title: "Languages",
-      skills: ["JavaScript", "TypeScript", "Python", "SQL", "HTML", "CSS"],
+      skills: ["JavaScript", "TypeScript", "Python", "Java", "SQL"],
     },
     {
-      title: "Frameworks & Libraries",
+      title: "FrontEnd",
       skills: [
-        "React",
         "Next.js",
-        "Node.js",
-        "Express",
+        "React.js",
         "Tailwind CSS",
-        "Framer Motion",
+        "ShadCn",
+        "Tanstack Query",
       ],
     },
     {
-      title: "Tools & Concepts",
+      title: "Backend",
+      skills: ["Nest.js", "Node.js", "Express", "Django"],
+    },
+    {
+      title: "Databases / Tools",
       skills: [
+        "RESTful APIs",
+        "DDD Architecture",
         "Git",
-        "Docker",
-        "REST APIs",
         "PostgreSQL",
-        "System Design",
-        "Agile",
+        "MongoDB",
+        "CI/CD basics",
       ],
     },
   ];
@@ -46,7 +49,7 @@ export default function Skills() {
           <div className="w-20 h-1.5 bg-primary rounded-full" />
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-4 gap-12">
           {skillGroups.map((group, i) => (
             <motion.div
               key={group.title}

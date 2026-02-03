@@ -6,28 +6,32 @@ import ProjectCard from "./ProjectCard";
 export default function Projects() {
   const projects = [
     {
-      title: "Portfolio Website",
+      title: "MathPilot",
       description:
-        "A premium personal portfolio built with Next.js, Framer Motion, and Tailwind CSS. Features smooth animations and responsive design.",
-      tech: "Next.js, TypeScript, Tailwind, Framer Motion",
+        "AI based Math learning platform with real-time evaluation and progress tracking.",
+      tech: "Next.js, TypeScript, Tailwind, NestJS, PostgreSQL",
+      link: "http://mathpilot-frontend-v2.eu-west-2.elasticbeanstalk.com/sign-in",
     },
     {
-      title: "Educational Platform",
+      title: "ILMINO",
       description:
-        "An interactive learning management system for computer science students. Includes real-time code evaluation and progress tracking.",
-      tech: "React, Node.js, PostgreSQL, Docker",
+        "AI based Ed-Tech platform for teaching students with real-time evaluation and progress tracking.",
+      tech: "Next.js, TypeScript, Tailwind, NestJS, PostgreSQL",
+      link: "http://ilm-ai-frontend-v2.eu-west-2.elasticbeanstalk.com/",
     },
     {
-      title: "Social Analytics Dashboard",
+      title: "EdMate",
       description:
-        "Real-time data visualization tool for social media metrics. Built with D3.js and WebSocket integration for live updates.",
-      tech: "TypeScript, D3.js, React, WebSocket",
+        "Ed-Tech platform to manage classes, schedules, and learning content.",
+      tech: "React, TypeScript, NodeJS, PostgreSQL",
+      link: "https://quiz.edmate.ai/question-bank",
     },
     {
-      title: "Developer Tools CLI",
+      title: "Khamar Bondhu",
       description:
-        "A comprehensive command-line interface to automate repetitive development tasks and project bootstrapping.",
-      tech: "Node.js, Commander, Inquirer",
+        "Designed for livestock farmers to access various services, including medical services from vets, disease information, livestock news, and guidelines for livestock well-being.",
+      tech: "Node.js, React, TypeScript, PostgreSQL",
+      link: "https://khamar-bandhu-front.mpower-social.com/",
     },
   ];
 

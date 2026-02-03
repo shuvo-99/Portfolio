@@ -48,7 +48,8 @@ export default function Hero() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="/resume.pdf"
+              href="/CV_Md. Anonto Shuvo.pdf"
+              download
               className="px-8 py-3 rounded-full border border-border bg-background hover:bg-muted font-medium transition-all flex items-center gap-2"
             >
               <FileText className="w-4 h-4" />
