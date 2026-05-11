@@ -5,16 +5,21 @@ import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import CustomDialog from "./ui/customDialog";
 
+interface Tech {
+  title: string;
+  iconName: string;
+}
+
 export default function ProjectCard({
   title,
   description,
-  tech,
+  techs,
   link,
   details,
 }: {
   title: string;
   description: string;
-  tech: string;
+  techs: Tech[];
   link: string;
   details: string[];
 }) {
@@ -42,7 +47,7 @@ export default function ProjectCard({
           <CustomDialog
             title={title}
             description={description}
-            tech={tech}
+            techs={techs}
             link={link}
             details={details}
           ></CustomDialog>
