@@ -3,17 +3,25 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
+import CustomDialog from "./ui/customDialog";
+
+interface Tech {
+  title: string;
+  iconName: string;
+}
 
 export default function ProjectCard({
   title,
   description,
-  tech,
+  techs,
   link,
+  details,
 }: {
   title: string;
   description: string;
-  tech: string;
+  techs: Tech[];
   link: string;
+  details: string[];
 }) {
   return (
     <motion.div
@@ -32,7 +40,21 @@ export default function ProjectCard({
         </div>
       </div>
       <p className="text-muted-foreground mb-6 line-clamp-2">{description}</p>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex  justify-around">
+        <div></div>
+        <p className="px-3 py-1 text-center text-secondary-foreground text-xs font-medium bg-secondary rounded-full cursor-pointer">
+          {/* <customDialog> */}
+          <CustomDialog
+            title={title}
+            description={description}
+            techs={techs}
+            link={link}
+            details={details}
+          ></CustomDialog>
+        </p>
+        <div></div>
+      </div>
+      {/* <div className="flex flex-wrap gap-2">
         {tech.split(", ").map((t) => (
           <span
             key={t}
@@ -41,7 +63,7 @@ export default function ProjectCard({
             {t}
           </span>
         ))}
-      </div>
+      </div> */}
     </motion.div>
   );
 }
