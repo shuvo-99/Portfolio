@@ -41,7 +41,7 @@ const CustomDialog = ({
           View Details
         </Button>
       </AlertDialogTrigger>
-      <AlertDialogContent className="max-w-[95vw] md:max-w-2xl! lg:max-w-4xl! bg-white max-h-[90vh] overflow-y-auto">
+      <AlertDialogContent className="max-w-[95vw] md:max-w-2xl! lg:max-w-4xl! bg-white max-h-[60vh] overflow-y-auto">
         <AlertDialogHeader>
           <AlertDialogTitle>{title}</AlertDialogTitle>
           <AlertDialogDescription className="text-lg text-muted-foreground">
