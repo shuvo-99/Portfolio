@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, FolderCode, type LucideIcon } from "lucide-react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import CustomDialog from "./ui/customDialog";
@@ -20,7 +20,31 @@ export interface Project {
   details: string[];
   image?: string;
   featured?: boolean;
+  /** Placeholder styling, used when there is no screenshot. */
+  tint?: Tint;
+  icon?: LucideIcon;
 }
+
+// Full class strings so Tailwind can see them. Soft backgrounds keep placeholders quiet.
+const tints = {
+  violet: {
+    bg: "bg-violet-50 dark:bg-violet-500/[0.07]",
+    dots: "text-violet-300/60 dark:text-violet-400/20",
+    tile: "text-violet-600 ring-violet-200 dark:text-violet-300 dark:ring-violet-400/25",
+  },
+  sky: {
+    bg: "bg-sky-50 dark:bg-sky-500/[0.07]",
+    dots: "text-sky-300/60 dark:text-sky-400/20",
+    tile: "text-sky-600 ring-sky-200 dark:text-sky-300 dark:ring-sky-400/25",
+  },
+  emerald: {
+    bg: "bg-emerald-50 dark:bg-emerald-500/[0.07]",
+    dots: "text-emerald-300/60 dark:text-emerald-400/20",
+    tile: "text-emerald-600 ring-emerald-200 dark:text-emerald-300 dark:ring-emerald-400/25",
+  },
+} as const;
+
+export type Tint = keyof typeof tints;
 
 function hostname(link: string) {
   try {
@@ -30,7 +54,14 @@ function hostname(link: string) {
   }
 }
 
-function Preview({ title, link, image }: Pick<Project, "title" | "link" | "image">) {
+function Preview({
+  title,
+  link,
+  image,
+  tint = "sky",
+  icon: PlaceholderIcon = FolderCode,
+}: Pick<Project, "title" | "link" | "image" | "tint" | "icon">) {
+  const t = tints[tint];
   return (
     <div className="relative overflow-hidden rounded-xl border border-border bg-muted">
       {/* Browser chrome */}
@@ -52,12 +83,28 @@ function Preview({ title, link, image }: Pick<Project, "title" | "link" | "image
             className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-blue-600 to-indigo-700">
+          <div
+            className={cn(
+              "absolute inset-0 flex flex-col items-center justify-center gap-3",
+              t.bg,
+            )}
+          >
             <div
               aria-hidden
-              className="absolute inset-0 opacity-20 bg-[radial-gradient(circle,white_1px,transparent_1px)] bg-size-[16px_16px]"
+              className={cn(
+                "absolute inset-0 bg-[radial-gradient(circle,currentColor_1px,transparent_1px)] bg-size-[18px_18px] mask-[radial-gradient(ellipse_at_center,black_30%,transparent_75%)]",
+                t.dots,
+              )}
             />
-            <span className="relative text-2xl md:text-3xl font-bold tracking-tight text-white/95 transition-transform duration-500 group-hover:scale-105">
+            <div
+              className={cn(
+                "relative h-12 w-12 rounded-xl bg-card ring-1 shadow-sm flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3",
+                t.tile,
+              )}
+            >
+              <PlaceholderIcon className="w-6 h-6" />
+            </div>
+            <span className="relative text-sm font-semibold tracking-tight text-foreground/70">
               {title}
             </span>
           </div>
@@ -68,7 +115,8 @@ function Preview({ title, link, image }: Pick<Project, "title" | "link" | "image
 }
 
 export default function ProjectCard(project: Project) {
-  const { title, description, techs, link, details, image, featured } = project;
+  const { title, description, techs, link, details, image, featured, tint, icon } =
+    project;
 
   return (
     <motion.article
@@ -80,7 +128,7 @@ export default function ProjectCard(project: Project) {
           : "flex flex-col",
       )}
     >
-      <Preview title={title} link={link} image={image} />
+      <Preview title={title} link={link} image={image} tint={tint} icon={icon} />
 
       <div
         className={cn("flex flex-1 flex-col px-2 pt-5 pb-2", featured && "md:pt-0")}

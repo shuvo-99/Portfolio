@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
+import { CalendarDays, Leaf, Sigma } from "lucide-react";
 import ProjectCard, { type Project } from "./ProjectCard";
 
 export default function Projects() {
@@ -42,6 +43,8 @@ export default function Projects() {
         { title: "PostgreSQL", iconName: "logos:postgresql" },
       ],
       link: "https://mathpilot.org/",
+      tint: "violet",
+      icon: Sigma,
       details: [
         "Developed a structured learning flow allowing users to select subjects, modules, papers, and topics, each containing step-wise descriptive questions",
         "Designed and implemented a custom three-column problem-solving layout (question, canvas, navigation) optimized for mathematical workflows.",
@@ -62,6 +65,8 @@ export default function Projects() {
         { title: "PostgreSQL", iconName: "logos:postgresql" },
       ],
       link: "https://quiz.edmate.ai/question-bank",
+      tint: "sky",
+      icon: CalendarDays,
       details: [
         "Developed teacher and admin dashboards for class scheduling, content management, and role-based access control.",
         "Implemented quiz and question modules allowing admins to create MCQs and students to view instant results.",
@@ -80,6 +85,8 @@ export default function Projects() {
         { title: "PostgreSQL", iconName: "logos:postgresql" },
       ],
       link: "https://khamar-bandhu-front.mpower-social.com/",
+      tint: "emerald",
+      icon: Leaf,
       details: [
         "Built admin panels for content creation, notification scheduling, and user management.",
         "Implemented feedback systems and managed livestock disease and information modules.",
