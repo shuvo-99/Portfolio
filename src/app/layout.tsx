@@ -38,8 +38,9 @@ export const viewport: Viewport = {
   ],
 };
 
-// Runs before first paint so the saved / OS theme is applied without a flash.
-const themeScript = `(function(){try{var t=localStorage.getItem("theme");var d=t?t==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d);}catch(e){}})();`;
+// Runs before first paint so the theme is applied without a flash.
+// Follows the OS setting unless the visitor picked a theme with the toggle.
+const themeScript = `(function(){var t=null;try{t=localStorage.getItem("theme");}catch(e){}var d=t?t==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d);})();`;
 
 export default function RootLayout({
   children,

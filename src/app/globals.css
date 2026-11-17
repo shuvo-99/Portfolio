@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Class-based dark mode (toggled by ThemeToggle, defaults to the OS setting) */
+/* Class-based dark mode (follows the OS setting; ThemeToggle overrides it) */
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
