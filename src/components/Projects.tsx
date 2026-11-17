@@ -96,9 +96,9 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-muted/30">
+    <section id="projects" className="py-24">
       <div className="max-w-5xl mx-auto px-6">
-        <SectionHeading index="03" eyebrow="Projects" title="Featured Projects" />
+        <SectionHeading index="04" eyebrow="Projects" title="Featured Projects" />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (

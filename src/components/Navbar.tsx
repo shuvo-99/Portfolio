@@ -10,8 +10,8 @@ import ThemeToggle from "./ThemeToggle";
 const navLinks = [
   { name: "About", id: "about" },
   { name: "Experience", id: "experience" },
-  { name: "Projects", id: "projects" },
   { name: "Teaching", id: "teaching" },
+  { name: "Projects", id: "projects" },
   { name: "Skills", id: "skills" },
   { name: "Contact", id: "contact" },
 ];

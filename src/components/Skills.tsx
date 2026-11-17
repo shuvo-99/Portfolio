@@ -33,6 +33,8 @@ const skillGroups: { title: string; skills: Skill[] }[] = [
   {
     title: "Backend",
     skills: [
+      { name: "Flask", icon: "simple-icons:flask" },
+      { name: "SQLAlchemy", icon: "simple-icons:sqlalchemy" },
       { name: "NestJS", icon: "logos:nestjs" },
       { name: "Node.js", icon: "logos:nodejs-icon" },
       { name: "Express", icon: "simple-icons:express" },
@@ -40,10 +42,12 @@ const skillGroups: { title: string; skills: Skill[] }[] = [
     ],
   },
   {
-    title: "Databases",
+    title: "Data",
     skills: [
       { name: "PostgreSQL", icon: "logos:postgresql" },
+      { name: "BigQuery", icon: "logos:google-cloud" },
       { name: "MongoDB", icon: "logos:mongodb-icon" },
+      { name: "pandas", icon: "simple-icons:pandas" },
     ],
   },
   {
@@ -52,6 +56,16 @@ const skillGroups: { title: string; skills: Skill[] }[] = [
       { name: "RESTful APIs", icon: "tabler:api" },
       { name: "Domain-Driven Design", icon: "tabler:hierarchy-2" },
       { name: "Git", icon: "logos:git-icon" },
+      { name: "unittest", icon: "tabler:test-pipe" },
+    ],
+  },
+  {
+    title: "Cloud & DevOps",
+    skills: [
+      { name: "Google Cloud", icon: "logos:google-cloud" },
+      { name: "AWS Cognito", icon: "logos:aws-cognito" },
+      { name: "Docker", icon: "logos:docker-icon" },
+      { name: "Sentry", icon: "simple-icons:sentry" },
       { name: "CI/CD basics", icon: "tabler:refresh" },
     ],
   },
@@ -59,7 +73,7 @@ const skillGroups: { title: string; skills: Skill[] }[] = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-24 bg-muted/40">
       <div className="max-w-5xl mx-auto px-6">
         <SectionHeading index="05" eyebrow="Skills" title="Skills & Technologies" />
 

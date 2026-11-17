@@ -2,28 +2,54 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 
 interface Job {
   title: string;
   company: string;
+  /** Public company page, if any. */
+  companyUrl?: string;
+  /** Product worked on, shown under the company name. */
+  product?: string;
   period: string;
   tags: string[];
-  /** Label for the tag list (screen readers). */
-  tagsLabel?: string;
   highlights: string[];
-  /** Optional in-page link, e.g. to the Teaching section. */
-  more?: { label: string; href: string };
 }
 
-const VISIBLE_BULLETS = 3;
+// Current role shows more up front; past roles stay compact.
+const VISIBLE_BULLETS = { current: 3, past: 2 };
 
 const jobs: Job[] = [
   {
+    title: "Software Engineer",
+    company: "The Product Dev",
+    companyUrl: "https://theproductdev.com/",
+    product: "Acctuate: financial analytics & reporting",
+    period: "Jun 2026 — Present",
+    tags: [
+      "Python",
+      "Flask",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "BigQuery",
+      "GCP",
+      "AWS Cognito",
+      "Docker",
+      "Sentry",
+    ],
+    highlights: [
+      "Build and maintain REST endpoints for Acctuate's financial analytics API, covering ARR, cohort retention, deferred revenue, cash flow, balance sheet, AR/AP aging, headcount and sales pipeline. Delivered 100+ tickets (~530 commits) in 5 months.",
+      "Built the ARR analytics endpoints on BigQuery views: customer movement (new, expansion, contraction, churn, winback), customer waterfall, up-for-renewal share of total ARR, cohort drill-downs and product filtering.",
+      "Delivered the customer deposits module end to end (database model and migration, BigQuery loader, schedule builder and API), plus the data loaders that sync BigQuery into Cloud SQL.",
+      "Improved production reliability: fixed a database connection leak, added Sentry error logging, fixed Decimal-to-float serialization in financial outputs, fixed auth ordering in the AWS Cognito delegated login, and hardened bulk date-range updates with row locking and fiscal-period rollover.",
+      "Grew the unittest suite (now 54 test files) alongside new features, wrote the team's Data API QC guideline, and kept the API documentation up to date.",
+    ],
+  },
+  {
     title: "Full Stack Software Engineer",
     company: "ILM AI Ltd",
-    period: "2025 — Present",
+    period: "2025 — 2026",
     tags: ["Next.js", "TypeScript", "NestJS", "PostgreSQL", "tldraw"],
     highlights: [
       "Led end-to-end frontend development of an AI-driven ed-tech platform using Next.js and TypeScript, supporting hundreds of concurrent learning sessions with complex topic-based workflows.",
@@ -32,24 +58,6 @@ const jobs: Job[] = [
       "Implemented advanced interactive canvas tooling (tldraw-based) for in-lesson writing, multi-page problem solving, dynamic resizing, and performance-optimized rendering, tailored for math-heavy workflows.",
       "Modernized backend architecture and data layer by migrating Express → NestJS and MongoDB → PostgreSQL, redesigning relational schemas and optimizing queries for analytics-heavy dashboards.",
     ],
-  },
-  {
-    title: "Adjunct Lecturer",
-    company: "BRAC University",
-    period: "2024 — Present",
-    tags: [
-      "Software Engineering",
-      "Data Structures & Algorithms",
-      "Databases",
-      "System Analysis & Design",
-    ],
-    tagsLabel: "Courses",
-    highlights: [
-      "Teaching undergraduate courses in Software Engineering, Data Structures & Algorithms, Databases, and System Analysis & Design to 100+ students per semester.",
-      "Delivering both theory and lab sessions, guiding students through real-world system design and implementation patterns.",
-      "Mentoring students on clean code, problem-solving, and architectural thinking, strengthening foundational CS skills.",
-    ],
-    more: { label: "More on my teaching", href: "#teaching" },
   },
   {
     title: "Software Engineer",
@@ -67,9 +75,10 @@ const jobs: Job[] = [
 
 function JobEntry({ job, index }: { job: Job; index: number }) {
   const [expanded, setExpanded] = useState(false);
-  const visible = job.highlights.slice(0, VISIBLE_BULLETS);
-  const extra = job.highlights.slice(VISIBLE_BULLETS);
   const isCurrent = job.period.includes("Present");
+  const limit = isCurrent ? VISIBLE_BULLETS.current : VISIBLE_BULLETS.past;
+  const visible = job.highlights.slice(0, limit);
+  const extra = job.highlights.slice(limit);
 
   return (
     <motion.li
@@ -84,7 +93,24 @@ function JobEntry({ job, index }: { job: Job; index: number }) {
         <p className="text-sm font-medium text-muted-foreground tabular-nums">
           {job.period}
         </p>
-        <p className="mt-1 font-semibold text-foreground">{job.company}</p>
+        <p className="mt-1 font-semibold text-foreground">
+          {job.companyUrl ? (
+            <a
+              href={job.companyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 hover:text-primary transition-colors"
+            >
+              {job.company}
+              <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
+            </a>
+          ) : (
+            job.company
+          )}
+        </p>
+        {job.product && (
+          <p className="mt-1 text-sm text-muted-foreground">{job.product}</p>
+        )}
       </div>
 
       {/* Content column with timeline rail */}
@@ -134,7 +160,7 @@ function JobEntry({ job, index }: { job: Job; index: number }) {
 
         <ul
           className="mt-5 flex flex-wrap gap-2"
-          aria-label={job.tagsLabel ?? "Technologies"}
+          aria-label="Technologies"
         >
           {job.tags.map((tag) => (
             <li
@@ -146,15 +172,6 @@ function JobEntry({ job, index }: { job: Job; index: number }) {
           ))}
         </ul>
 
-        {job.more && (
-          <a
-            href={job.more.href}
-            className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline underline-offset-4"
-          >
-            {job.more.label}
-            <ArrowRight className="w-4 h-4" />
-          </a>
-        )}
       </div>
     </motion.li>
   );

@@ -39,7 +39,7 @@ export default function Teaching() {
   return (
     <section id="teaching" className="py-24 bg-muted/40">
       <div className="max-w-5xl mx-auto px-6">
-        <SectionHeading index="04" eyebrow="Teaching" title="Teaching & Mentorship" />
+        <SectionHeading index="03" eyebrow="Teaching" title="Teaching & Mentorship" />
 
         {/* Role card */}
         <motion.div

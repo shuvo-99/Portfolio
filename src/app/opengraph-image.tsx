@@ -38,7 +38,7 @@ export default function OpengraphImage() {
           <span style={{ color: "#4f46e5" }}>Educator</span>
         </div>
         <div style={{ fontSize: 32, color: "#475569", marginTop: 36 }}>
-          Full-stack · AI-powered ed-tech · Adjunct Lecturer @ BRAC University
+          Software Engineer @ The Product Dev · Lecturer @ BRAC University
         </div>
       </div>
     ),

@@ -34,7 +34,7 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
-            Currently at ILM AI · BRAC University
+            Currently at The Product Dev · BRAC University
           </motion.div>
 
           <motion.p
@@ -57,9 +57,9 @@ export default function Hero() {
             {...fadeUp(0.15)}
             className="text-lg text-foreground/75 leading-relaxed mb-10 max-w-xl"
           >
-            Full-stack engineer building AI-powered ed-tech with Next.js, NestJS
-            and PostgreSQL, and teaching software engineering at BRAC
-            University.
+            Software engineer building data-heavy products (financial
+            analytics APIs today, AI-powered ed-tech before) and teaching
+            software engineering at BRAC University.
           </motion.p>
 
           <motion.div {...fadeUp(0.2)} className="flex flex-wrap gap-4">
@@ -129,17 +129,17 @@ function CodeCard() {
             <span className={k}>const</span> <span className={p}>shuvo</span>{" "}
             = {"{"}
             {"\n"}
-            {"  "}role: <span className={s}>&quot;Full Stack Engineer&quot;</span>,
+            {"  "}role: <span className={s}>&quot;Software Engineer&quot;</span>,
             {"\n"}
-            {"  "}company: <span className={s}>&quot;ILM AI&quot;</span>,
+            {"  "}company: <span className={s}>&quot;The Product Dev&quot;</span>,
             {"\n"}
             {"  "}teaches: <span className={s}>&quot;SWE @ BRAC University&quot;</span>,
             {"\n"}
-            {"  "}stack: [<span className={s}>&quot;Next.js&quot;</span>,{" "}
-            <span className={s}>&quot;NestJS&quot;</span>,{" "}
-            <span className={s}>&quot;PostgreSQL&quot;</span>],
+            {"  "}stack: [<span className={s}>&quot;Python&quot;</span>,{" "}
+            <span className={s}>&quot;BigQuery&quot;</span>,{" "}
+            <span className={s}>&quot;Next.js&quot;</span>],
             {"\n"}
-            {"  "}focus: <span className={s}>&quot;AI-powered ed-tech&quot;</span>,
+            {"  "}focus: <span className={s}>&quot;Financial analytics&quot;</span>,
             {"\n"}
             {"}"};
           </code>

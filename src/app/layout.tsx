@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 const description =
-  "Md. Anonto Shuvo: full-stack software engineer building AI-powered ed-tech with Next.js, NestJS and PostgreSQL, and adjunct lecturer at BRAC University.";
+  "Md. Anonto Shuvo: software engineer at The Product Dev building financial analytics APIs with Python and BigQuery, previously AI-powered ed-tech, and adjunct lecturer at BRAC University.";
 
 export const metadata: Metadata = {
   title: "Shuvo | Software Engineer & Adjunct Lecturer",
