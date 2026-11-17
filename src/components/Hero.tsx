@@ -65,7 +65,7 @@ export default function Hero() {
           <motion.div {...fadeUp(0.2)} className="flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="px-7 py-3 rounded-full bg-primary text-primary-foreground font-medium shadow-lg shadow-primary/25 hover:opacity-90 transition-all flex items-center gap-2 group"
+              className="px-7 py-3 rounded-full bg-cta text-cta-foreground font-medium shadow-lg shadow-cta/25 dark:shadow-cta/10 hover:opacity-90 transition-all flex items-center gap-2 group"
             >
               View Projects
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

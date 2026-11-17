@@ -37,7 +37,7 @@ export default function Contact() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <a
               href="mailto:anontoshuvo99@gmail.com"
-              className="px-10 py-4 rounded-full bg-primary text-primary-foreground font-bold shadow-lg shadow-primary/25 hover:opacity-90 transition-all flex items-center gap-2"
+              className="px-10 py-4 rounded-full bg-cta text-cta-foreground font-bold shadow-lg shadow-cta/25 dark:shadow-cta/10 hover:opacity-90 transition-all flex items-center gap-2"
             >
               <Mail className="w-5 h-5" />
               Email Me

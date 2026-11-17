@@ -168,7 +168,7 @@ export default function ProjectCard(project: Project) {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-full bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-1 rounded-full bg-cta px-4 py-1.5 text-sm font-medium text-cta-foreground hover:opacity-90 transition-opacity"
           >
             Live site
             <ArrowUpRight className="w-4 h-4" />

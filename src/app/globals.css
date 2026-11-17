@@ -16,6 +16,10 @@
   --primary: 221 83% 53%;
   --primary-foreground: 210 40% 98%;
 
+  /* Solid call-to-action buttons. Same as primary in light mode. */
+  --cta: 221 83% 53%;
+  --cta-foreground: 0 0% 100%;
+
   --secondary: 210 40% 96%;
   --secondary-foreground: 222 47% 11%;
 
@@ -45,6 +49,10 @@
   --primary: 217 91% 60%;
   --primary-foreground: 222 47% 11%;
 
+  /* Deeper, less saturated blue so buttons don't glow; white text is 5:1 */
+  --cta: 217 75% 50%;
+  --cta-foreground: 0 0% 100%;
+
   --secondary: 217 32% 17%;
   --secondary-foreground: 210 40% 98%;
 
@@ -68,6 +76,8 @@
   --color-card-foreground: hsl(var(--card-foreground));
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-cta: hsl(var(--cta));
+  --color-cta-foreground: hsl(var(--cta-foreground));
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
   --color-muted: hsl(var(--muted));
