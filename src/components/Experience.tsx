@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 
 interface Job {
@@ -10,7 +10,11 @@ interface Job {
   company: string;
   period: string;
   tags: string[];
+  /** Label for the tag list (screen readers). */
+  tagsLabel?: string;
   highlights: string[];
+  /** Optional in-page link, e.g. to the Teaching section. */
+  more?: { label: string; href: string };
 }
 
 const VISIBLE_BULLETS = 3;
@@ -28,6 +32,24 @@ const jobs: Job[] = [
       "Implemented advanced interactive canvas tooling (tldraw-based) for in-lesson writing, multi-page problem solving, dynamic resizing, and performance-optimized rendering, tailored for math-heavy workflows.",
       "Modernized backend architecture and data layer by migrating Express → NestJS and MongoDB → PostgreSQL, redesigning relational schemas and optimizing queries for analytics-heavy dashboards.",
     ],
+  },
+  {
+    title: "Adjunct Lecturer",
+    company: "BRAC University",
+    period: "2024 — Present",
+    tags: [
+      "Software Engineering",
+      "Data Structures & Algorithms",
+      "Databases",
+      "System Analysis & Design",
+    ],
+    tagsLabel: "Courses",
+    highlights: [
+      "Teaching undergraduate courses in Software Engineering, Data Structures & Algorithms, Databases, and System Analysis & Design to 100+ students per semester.",
+      "Delivering both theory and lab sessions, guiding students through real-world system design and implementation patterns.",
+      "Mentoring students on clean code, problem-solving, and architectural thinking, strengthening foundational CS skills.",
+    ],
+    more: { label: "More on my teaching", href: "#teaching" },
   },
   {
     title: "Software Engineer",
@@ -110,7 +132,10 @@ function JobEntry({ job, index }: { job: Job; index: number }) {
           </button>
         )}
 
-        <ul className="mt-5 flex flex-wrap gap-2" aria-label="Technologies">
+        <ul
+          className="mt-5 flex flex-wrap gap-2"
+          aria-label={job.tagsLabel ?? "Technologies"}
+        >
           {job.tags.map((tag) => (
             <li
               key={tag}
@@ -120,6 +145,16 @@ function JobEntry({ job, index }: { job: Job; index: number }) {
             </li>
           ))}
         </ul>
+
+        {job.more && (
+          <a
+            href={job.more.href}
+            className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline underline-offset-4"
+          >
+            {job.more.label}
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        )}
       </div>
     </motion.li>
   );
@@ -153,17 +188,6 @@ export default function Experience() {
             <JobEntry key={job.company} job={job} index={i} />
           ))}
         </ol>
-
-        <p className="mt-14 text-sm text-muted-foreground md:pl-[240px]">
-          Alongside industry work, I teach at BRAC University. See{" "}
-          <a
-            href="#teaching"
-            className="font-medium text-primary hover:underline underline-offset-4"
-          >
-            Teaching
-          </a>
-          .
-        </p>
       </div>
     </section>
   );
