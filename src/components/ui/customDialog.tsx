@@ -1,6 +1,5 @@
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
@@ -9,12 +8,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react";
-
-// type Props {
-
-// }
 
 interface Tech {
   title: string;
@@ -37,11 +31,14 @@ const CustomDialog = ({
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button className="px-3 py-1 text-center text-secondary-foreground text-xs font-medium bg-secondary rounded-full cursor-pointer">
-          View Details
-        </Button>
+        <button
+          type="button"
+          className="rounded-full border border-border px-4 py-1.5 text-sm font-medium text-foreground hover:bg-muted transition-colors cursor-pointer"
+        >
+          Details
+        </button>
       </AlertDialogTrigger>
-      <AlertDialogContent className="max-w-[95vw] md:max-w-2xl! lg:max-w-4xl! bg-white max-h-[60vh] overflow-y-auto">
+      <AlertDialogContent className="max-w-[95vw] md:max-w-2xl! lg:max-w-4xl! max-h-[80vh] overflow-y-auto">
         <AlertDialogHeader>
           <AlertDialogTitle>{title}</AlertDialogTitle>
           <AlertDialogDescription className="text-lg text-muted-foreground">
@@ -60,13 +57,10 @@ const CustomDialog = ({
             </div>
             <div className="flex flex-wrap justify-around">
               {techs.map((t) => (
-                // <span
-                //   key={t}
-                //   className="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium"
-                // >
-                //   {t}
-                // </span>
-                <div className="space-y-2 flex flex-col items-center ">
+                <div
+                  key={t.title}
+                  className="space-y-2 flex flex-col items-center "
+                >
                   <Icon icon={t.iconName} width="32" height="32" />
                   <p className="text-secondary-foreground text-xs font-medium">
                     {t.title}
@@ -78,8 +72,15 @@ const CustomDialog = ({
         </AlertDialogHeader>
 
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          {/* <AlertDialogAction>Continue</AlertDialogAction> */}
+          <AlertDialogCancel>Close</AlertDialogCancel>
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+          >
+            Visit live site ↗
+          </a>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

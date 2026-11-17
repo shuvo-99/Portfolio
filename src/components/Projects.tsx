@@ -1,16 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import ProjectCard from "./ProjectCard";
-import { details } from "framer-motion/client";
+import SectionHeading from "./SectionHeading";
+import ProjectCard, { type Project } from "./ProjectCard";
 
 export default function Projects() {
-  const projects = [
+  const projects: Project[] = [
     {
       title: "ILMINO",
       description:
         "AI based Ed-Tech platform for teaching students with real-time evaluation and progress tracking.",
-      // tech: "Next.js, TypeScript, Tailwind, NestJS, PostgreSQL",
       techs: [
         { title: "Next JS", iconName: "logos:nextjs-icon" },
         { title: "TypeScript", iconName: "logos:typescript-icon" },
@@ -19,6 +18,8 @@ export default function Projects() {
         { title: "PostgreSQL", iconName: "logos:postgresql" },
       ],
       link: "https://ilmino.com/",
+      image: "/projects/ilmino.jpg",
+      featured: true,
       details: [
         "Led frontend development for dashboards and topic-based learning workflows using Next.js and TypeScript, supporting hundreds+ active learning sessions.",
         "Designed and implemented a unified quiz and AI-based evaluation system supporting 8+ question types with real-time feedback and scoring visualization.",
@@ -33,7 +34,6 @@ export default function Projects() {
       title: "MathPilot",
       description:
         "AI based Math learning platform with real-time evaluation and progress tracking.",
-      // tech: "Next.js, TypeScript, Tailwind, NestJS, PostgreSQL",
       techs: [
         { title: "Next JS", iconName: "logos:nextjs-icon" },
         { title: "TypeScript", iconName: "logos:typescript-icon" },
@@ -54,7 +54,6 @@ export default function Projects() {
       title: "EdMate",
       description:
         "Ed-Tech platform to manage classes, schedules, and learning content.",
-      // tech: "React, TypeScript, NodeJS, PostgreSQL",
       techs: [
         { title: "React", iconName: "material-icon-theme:react" },
         { title: "TypeScript", iconName: "logos:typescript-icon" },
@@ -73,7 +72,6 @@ export default function Projects() {
       title: "Khamar Bondhu",
       description:
         "Designed for livestock farmers to access various services, including medical services from vets, disease information, livestock news, and guidelines for livestock well-being.",
-      // tech: "Node.js, React, TypeScript, PostgreSQL",
       techs: [
         { title: "React", iconName: "material-icon-theme:react" },
         { title: "TypeScript", iconName: "logos:typescript-icon" },
@@ -93,18 +91,9 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 bg-muted/30">
       <div className="max-w-5xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold mb-4">Featured Projects</h2>
-          <div className="w-20 h-1.5 bg-primary rounded-full" />
-        </motion.div>
+        <SectionHeading index="03" eyebrow="Projects" title="Featured Projects" />
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
             <motion.div
               key={project.title}
@@ -112,6 +101,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
+              className={project.featured ? "md:col-span-2 lg:col-span-3" : ""}
             >
               <ProjectCard {...project} />
             </motion.div>
